@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card">
+    <h3 class="card-title">{{ !!id ? "Alterar" : "Cadastrar" }} Departamento</h3>
+    <div class="card-content">
+      <div class="inputs">
+        <div class="dep-nome">
+          <span>Departamento: </span>
+          <input
+            required
+            type="text"
+            [(ngModel)]="formulario.nome"
+            value="{{ formulario.nome }}"
+          />
+        </div>
+        <div class="dep.sigla">
+          <span>Sigla: </span>
+          <input
+            required
+            type="text"
+            [(ngModel)]="formulario.sigla"
+            value="{{ formulario.sigla }}"
+          />
+        </div>
+      </div>
+      <button
+        class="{{ !!id ? 'botao-put' : 'botao-post' }}"
+        (click)="postPutDepartamento()"
+      >
+        {{ !!id ? "Salvar" : "Cadastrar" }}
+      </button>
+      <button class="botao-cancel" (click)="goBack()">Cancelar</button>
+    </div>
+  </div>
+</div>

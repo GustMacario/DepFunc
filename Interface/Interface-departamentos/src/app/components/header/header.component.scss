@@ -1,0 +1,33 @@
+*{
+    background-color: white;
+}
+
+.header-body {
+    width           : 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    div{
+        width: 33%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img{
+        width: 80px;
+        height: 80px;
+        margin-left: 25px;
+    }
+
+    span {
+        font-size: 25px;
+        color: #aaaaaa;
+        margin-right: 25px;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="departamentos">
+    <table cellspacing="0">
+      <tr>
+        <th style="width: 200px">Nome</th>
+        <th>Sigla</th>
+        <th style="width: 52px; text-align: center;">Ações</th>
+      </tr>
+      <tr *ngFor="let dep of departamentos">
+        <td style="width: 300px;">{{ dep.nome }}</td>
+        <td>{{ dep.sigla }}</td>
+        <td>
+          <div class="actions">
+            <button (click)="listarFuncionarios(dep.id)">Funcionários</button>
+            <button (click)="abrirDetalheDepartamento(dep.id)" class="edit-icon"><img style="background-color: #FCA130;" src="../../../assets/edit-icon.svg" alt=""></button>
+            <button (click)="deleteDepartamento(dep.id)" class="delete-icon"><img style="background-color: #F93E3E;" src="../../../assets/delete-icon.svg" alt=""></button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <a [routerLink]="['/departamento-cadastro']" >Cadastrar departamento</a>
+</div>

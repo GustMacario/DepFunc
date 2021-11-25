@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card">
+    <h3 class="card-title">
+      {{ formulario.departamentoId != 0 ? "Alterar" : "Cadastrar" }} Funcionario
+    </h3>
+    <div class="card-content">
+      <div class="inputs">
+        <div class="func-nome">
+          <span>Funcionario: </span>
+          <input
+            required
+            type="text"
+            [(ngModel)]="formulario.nome"
+            value="{{ formulario.nome }}"
+          />
+        </div>
+        <div class="func-rg">
+          <span>RG: </span>
+          <input
+          mask="00.000.000-0"
+            maxlength="11"
+            required
+            type="text"
+            [(ngModel)]="formulario.rg"
+            value="{{ formulario.rg }}"
+          />
+        </div>
+        <div class="func-foto">
+          <span class="postPutFoto">{{ formulario.departamentoId != 0 ? "Alterar Foto:" : "Enviar Foto:" }}</span>
+          <label class="img-selec">
+            <img class="upload-icon" src="../../../assets/upload-icon.svg" alt="">
+            <input
+              class="img-selec--input"
+              type="file"
+              (change)="base64Conv($event)"
+            />
+          </label>
+        </div>
+      </div>
+      <button
+        class="{{ formulario.departamentoId != 0 ? 'botao-put' : 'botao-post' }}"
+        (click)="postPutFuncionario()"
+      >
+        {{ formulario.departamentoId != 0 ? "Salvar" : "Cadastrar" }}
+      </button>
+      <button class="botao-cancel" (click)="goBack()">Cancelar</button>
+    </div>
+  </div>
+</div>

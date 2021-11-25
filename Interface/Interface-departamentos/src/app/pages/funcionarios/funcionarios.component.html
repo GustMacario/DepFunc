@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="funcionarios">
+    <table cellspacing="0">
+      <tr>
+        <th style="width: 200px">Foto</th>
+        <th>Nome</th>
+        <th>RG</th>
+        <th style="width: 150px; text-align: center;">Ações</th>
+      </tr>
+      <tr *ngFor="let func of funcionarios.funcionarios">
+        <td class="func-foto"><img src="{{ func.foto }}" onerror="this.src='/assets/person-icon.svg'" alt="" /></td>
+        <td>{{ func.nome }}</td>
+        <td>{{ func.rg }}</td>
+        <td>
+          <div class="actions">
+            <button
+              (click)="abrirDetalheFuncionario(func.id)"
+              class="edit-icon"
+            >
+              <img
+                style="background-color: #fca130"
+                src="../../../assets/edit-icon.svg"
+                alt=""
+              />
+            </button>
+            <button (click)="deleteFuncionario(func.id)" class="delete-icon">
+              <img
+                style="background-color: #f93e3e"
+                src="../../../assets/delete-icon.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <button class="botao-cadastrar" (click)="cadastrarFuncionario()">
+    Cadastrar funcionario
+  </button>
+  <button class="botao-voltar" (click)="goBack()">
+    Voltar
+  </button>
+</div>
